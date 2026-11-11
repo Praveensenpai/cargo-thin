@@ -1,0 +1,29 @@
+[package]
+name = "cargo-thin"
+version = "0.1.0"
+edition = "2021"
+description = "Intelligent Rust target purger that preserves compiled binaries and reclaims gigabytes of build bloat"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/Praveensenpai/cargo-thin"
+readme = "README.md"
+authors = ["Praveen Senpai <pvnt20@gmail.com>"]
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+crossterm = "0.29"
+ratatui = "0.30"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "1.0"
+toml = "0.8"
+walkdir = "2"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[dev-dependencies]
+tempfile = "3.27.0"
