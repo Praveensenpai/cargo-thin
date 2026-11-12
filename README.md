@@ -3,7 +3,7 @@
 # 🧹 Cargo Thin (カーゴ・シン)
 ### *Intelligent Rust Target Purger & High-Performance Ratatui TUI*
 
-[![Crates.io](https://img.shields.io/badge/crates.io-v0.1.0-orange?style=flat-square)](https://crates.io)
+[![Latest Release](https://img.shields.io/github/v/release/Praveensenpai/cargo-thin?style=flat-square&color=orange)](https://github.com/Praveensenpai/cargo-thin/releases)
 [![License](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue?style=flat-square)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-linux--x86__64-informational?style=flat-square)](https://github.com/Praveensenpai/cargo-thin)
 [![Built with Ratatui](https://img.shields.io/badge/TUI-Ratatui%200.30-purple?style=flat-square)](https://ratatui.rs)
@@ -55,12 +55,37 @@ Standard `cargo clean` is a **dumb cleaner**: it blindly obliterates the entire 
 
 ---
 
-## ⚡ Quick Start
+## 🚀 Quick Start
 
-### Installation
+### 🪄 One-Liner Magic (Recommended)
+
+No Rust toolchain required. The installer downloads the prebuilt `x86_64-unknown-linux-gnu` binary, verifies its SHA-256 checksum, and places it in `~/.local/bin`:
 
 ```bash
-cargo install --path /home/paisen/Projects/cargo-thin
+curl -fsSL https://raw.githubusercontent.com/Praveensenpai/cargo-thin/main/install.sh | bash
+```
+
+> [!TIP]
+> Pin a specific release or choose another install directory:
+> ```bash
+> curl -fsSL https://raw.githubusercontent.com/Praveensenpai/cargo-thin/main/install.sh | bash -s -- --version v0.1.0 --dir ~/.cargo/bin
+> ```
+
+### 🛠️ Build From Source
+
+```bash
+git clone https://github.com/Praveensenpai/cargo-thin.git
+cd cargo-thin
+cargo install --path .
+```
+
+### 📦 Manual Binary
+
+Download `cargo-thin-x86_64-linux.tar.gz` from the [latest release](https://github.com/Praveensenpai/cargo-thin/releases/latest), check it against the published `.sha256`, then:
+
+```bash
+tar -xzf cargo-thin-x86_64-linux.tar.gz
+install -Dm 755 cargo-thin ~/.local/bin/cargo-thin
 ```
 
 ### Launch Interactive TUI
